@@ -12,7 +12,7 @@ public class RandomStringChooser
   public String getNext() {
     boolean hasAvailable = false;
     for(int i = 0; i < words.length; i++) {
-      if(words[i] != "") {
+      if(!words[i].equals("")) {
         hasAvailable = true;
       }
     }
@@ -20,10 +20,10 @@ public class RandomStringChooser
     if(!hasAvailable) {
       return "NONE";
     }
-    while(words[index] == "") {
+    while(words[index].equals("")) {
       index = (int)(Math.random()*(words.length-1));
     }
     String temp = words[index];
-    words[index] == "";
+    words[index] = "";
     return temp;
 }
