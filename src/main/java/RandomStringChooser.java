@@ -26,4 +26,5 @@ public class RandomStringChooser
     String temp = words[index];
     words[index] = null;
     return temp;
+  }
 }
