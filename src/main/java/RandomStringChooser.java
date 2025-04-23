@@ -7,7 +7,7 @@ public class RandomStringChooser
   //You will get a very confusing error message until you have working code in part b as well
   private String[] words;
   public RandomStringChooser(String[] strings) {
-    words = string;
+    words = strings;
   }
   public String getNext() {
     boolean hasAvailable = false;
