@@ -12,18 +12,18 @@ public class RandomStringChooser
   public String getNext() {
     boolean hasAvailable = false;
     for(int i = 0; i < words.length; i++) {
-      if(words[i] != null) {
+      if(words[i] != "") {
         hasAvailable = true;
       }
     }
     int index = (int)(Math.random()*(words.length-1));
     if(!hasAvailable) {
-      return "NONE';
+      return "NONE";
     }
-    while(words[index] == null) {
+    while(words[index] == "") {
       index = (int)(Math.random()*(words.length-1));
     }
     String temp = words[index];
-    words[index] == null;
+    words[index] == "";
     return temp;
 }
