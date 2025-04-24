@@ -12,7 +12,10 @@ public class RandomStringChooser
     }
   }
   public String getNext() {
-    int index = (int)(Math.random()*(words.size()-1));
+    if(words.size() <= 0) {
+      return "NONE";
+    }
+    int index = (int)(Math.random()*words.size());
     String temp = words.get(index);
     words.remove(index);
     return temp;
