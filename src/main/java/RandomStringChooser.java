@@ -5,26 +5,16 @@ public class RandomStringChooser
   
   //Heads up! 
   //You will get a very confusing error message until you have working code in part b as well
-  private String[] words;
+  private ArrayList<String> words = new ArrayList<String>();
   public RandomStringChooser(String[] strings) {
-    words = strings;
+    for(int i = 0; i < strings.length; i++) {
+      words.add(strings[i]);
+    }
   }
   public String getNext() {
-    boolean hasAvailable = false;
-    for(int i = 0; i < words.length; i++) {
-      if(words[i] != null) {
-        hasAvailable = true;
-      }
-    }
-    int index = (int)(Math.random()*(words.length-1));
-    if(!hasAvailable) {
-      return "NONE";
-    }
-    while(words[index] == null) {
-      index = (int)(Math.random()*(words.length-1));
-    }
-    String temp = words[index];
-    words[index] = null;
+    int index = (int)(Math.random()*words.size());
+    String temp = words.get(index);
+    words.remove(index);
     return temp;
   }
 }
